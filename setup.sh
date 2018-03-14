@@ -13,7 +13,7 @@ docker run -d --name couchdb.one \
  -e COUCHDB_USER=admin \
  -e COUCHDB_PASSWORD=admin \
  -v /tmp/my.cookie:/opt/couchdb/.erlang.cookie \
- -v /Users/cacois/Code/couch-cluster/couch1data:/opt/couchdb/data:Z \
+ -v $(pwd)/couch1data:/opt/couchdb/data:Z \
 couchdb:latest 
 
 docker run -d --name couchdb.two \
@@ -24,7 +24,7 @@ docker run -d --name couchdb.two \
  -e COUCHDB_USER=admin \
  -e COUCHDB_PASSWORD=admin \
  -v /tmp/my.cookie:/opt/couchdb/.erlang.cookie \
- -v /Users/cacois/Code/couch-cluster/couch2data:/opt/couchdb/data:Z \
+ -v $(pwd)/couch2data:/opt/couchdb/data:Z \
 couchdb:latest 
 
 docker run -d --name couchdb.three \
@@ -35,5 +35,5 @@ docker run -d --name couchdb.three \
  -e COUCHDB_USER=admin \
  -e COUCHDB_PASSWORD=admin \
  -v /tmp/my.cookie:/opt/couchdb/.erlang.cookie \
- -v /Users/cacois/Code/couch-cluster/couch3data:/opt/couchdb/data:Z \
+ -v $(pwd)/couch3data:/opt/couchdb/data:Z \
 couchdb:latest 
